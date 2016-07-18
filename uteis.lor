@@ -1,0 +1,30 @@
+Laravel
+-------
+projeto/app/Http/routes.php  = Arquivo de rotas
+projeto/app/Http/Controllers = Diretório dos Controllers
+                projeto/.env = Arquivo para configuração do banco de dados (e outros)
+     projeto/resources/views = Diretório das views
+    projeto/public/index.php = Página principal do projeto
+
+HTML(segurança) + Laravel
+-------------------------
+Ao usar o method=post poderá ocorrer o erro:
+  CSRF = Cross Site Forgery Request - Forma de ataque, requisição indevida.
+Será necessário gerar um token (identificador gerado em toda requisição)
+    Exemplo da criação usando laravel:
+          <input type="hidden" name="_token" value="{{ csrf_token }}" />
+
+Blade(template)
+---------------
+
+  arquivo.blade.php   = Nome dado a arquivos que usam a notação do blade
+@extends('nomedado')  = Importa o template
+@section('nomedado')  = Ensina o começo do conteudo ao blade
+               @stop  = Ensina o final do conteudo ao blade
+       {{$variavel}}  = Notação para pegar conteúdo de variável
+
+@foreach($produtos as $produto)  = Foreach usando notação do blade
+@endforeach
+
+<tr class="{{ $p->quantidade <=1 ? 'danger' : ''}}"> = Exemplo de if ternário utilizado
+para marcar em vermelho os itens do estoque que possuem a quantidade menor ou igual a 1;
