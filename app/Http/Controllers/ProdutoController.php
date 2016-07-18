@@ -5,9 +5,16 @@ use Request;
 
 class ProdutoController extends Controller {
 
+    public function getProdutos(){
+      return DB::select('select * from produtos');
+    }
+
     public function lista(){
-        $produtos = DB::select('select * from produtos');
-        return view('listagem')->with('produtos', $produtos);
+        return view('listagem')->with('produtos', $this->getProdutos());
+    }
+
+    public function listaJson(){
+      return response()->json($this->getProdutos());
     }
 
     public function mostra(){
@@ -30,6 +37,7 @@ class ProdutoController extends Controller {
       DB::insert('insert into produtos (nome, valor, descricao, quantidade) values (?,?,?,?)',
       array($nome, $valor, $descricao, $quantidade));
 
-      return view('adicionado')->with('nome', $nome);
+      //return redirect('/produtos')->withInput(Request::only('nome'));
+      return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
     }
 }
