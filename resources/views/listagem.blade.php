@@ -19,6 +19,11 @@
           <span class="glyphicon glyphicon-trash"></span>
         </a>
     </td>
+    <td>
+        <a href="/produtos/edita/{{$p->id}}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+    </td>
   </tr>
   @endforeach
 </table>
