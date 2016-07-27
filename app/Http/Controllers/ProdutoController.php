@@ -27,7 +27,7 @@ class ProdutoController extends Controller {
     }
 
     public function adiciona(){
-      Produto::create(Request::all());
+        Produto::create(Request::all());
       return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
     }
 
@@ -47,6 +47,7 @@ class ProdutoController extends Controller {
         $produto = Produto::find($id);
         $produto->nome = Request::input('nome');
         $produto->quantidade = Request::input('quantidade');
+        $produto->tamanho = Request::input('tamanho');
         $produto->valor = Request::input('valor');
         $produto->descricao = Request::input('descricao');
         $produto->save();

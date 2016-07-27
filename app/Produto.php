@@ -12,7 +12,7 @@ class Produto extends Model
     public $timestamps = false;
 
     //define os parâmetros passados para o construtor da classe model
-    protected $fillable = array('nome', 'descricao', 'valor', 'quantidade');
+    protected $fillable = array('nome', 'descricao', 'valor', 'quantidade', 'tamanho');
 
     //impedir que um determinado atributo seja alterado por parâmetro (usando o construtor da classe model)
     protected $guarded = ['id'];

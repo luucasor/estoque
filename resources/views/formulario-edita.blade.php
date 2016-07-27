@@ -19,6 +19,10 @@
       <input name="quantidade" class="form-control" value="{{$produto->quantidade}}"/>
     </div>
     <div class="form-group">
+      <label>Tamanho</label>
+      <input name="tamanho" class="form-control" value="{{$produto->tamanho}}"/>
+    </div>
+    <div class="form-group">
       <label>Descrição</label>
       <input name="descricao" class="form-control" value="{{$produto->descricao}}"/>
     </div>
