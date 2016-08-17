@@ -24,9 +24,11 @@ class ProdutosRequest extends Request
     public function rules()
     {
       return [
-         'nome' => 'required|max:100',
+         'nome' => 'required|min:3',
          'descricao' => 'required|max:255',
-         'valor' => 'required|numeric'
+         'valor' => 'required|numeric',
+         'quantidade' => 'required|numeric',
+         'tamanho' => 'required|max:100'
       ];
     }
 
